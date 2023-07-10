@@ -8,8 +8,11 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 
+<<<<<<< HEAD
 app.use(require('./routes/users.route'));
 
+=======
+>>>>>>> 195e4e46bc5fd212b1d04c3609a93c2ea8ec452b
 mongoose
   .connect(process.env.MONGO_SERVER)
   .then(() => console.log("Успешно соединились с сервером MongoDB"))
