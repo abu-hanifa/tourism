@@ -11,6 +11,7 @@ module.exports.usersController = {
 
   registerUsers: async (req, res) => {
     const { name, lastname, email, password } = req.body;
+    const {avatar} = req.file.path
     const hash = await bcrypt.hash(password, Number(process.env.BCRYPT_ROUNDS));
     const candidate = await User.findOne({ email: email });
     if (candidate) {
@@ -21,6 +22,7 @@ module.exports.usersController = {
       name: name,
       lastname: lastname,
       password: hash,
+      avatar: avatar,
     });
     res.json(user);
   },
