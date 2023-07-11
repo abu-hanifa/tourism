@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use(require('./routes/users.route'));
+app.use(require('./routes/comments.route'))
 
 mongoose
   .connect(process.env.MONGO_SERVER)
