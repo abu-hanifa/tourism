@@ -4,9 +4,12 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
+const path = require('path')
 
+app.use('/images',express.static('images'))
 app.use(express.json());
 app.use(cors());
+
 
 app.use(require('./routes/users.route'));
 app.use(require('./routes/comments.route'))
